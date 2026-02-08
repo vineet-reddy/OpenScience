@@ -1,4 +1,4 @@
-// Port of pipeline/leaderboard.py — weighted PageRank impact scoring
+// Port of analysis/leaderboard.py — weighted PageRank impact scoring
 // This runs server-side in Next.js API routes (Vercel-compatible)
 
 export interface CitationCounts {

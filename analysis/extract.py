@@ -4,16 +4,16 @@ import uuid
 from pathlib import Path
 from typing import List
 
-from pipeline.claim_extract import extract_claims
-from pipeline.report import render_report
-from pipeline.scoring import select_breakthroughs, select_key_ideas
-from pipeline.text_extract import (
+from analysis.claims import extract_claims
+from analysis.report import render_report
+from analysis.scoring import select_breakthroughs, select_key_ideas
+from analysis.parsing import (
     extract_metadata_from_tex,
     extract_pdf_pages,
     parse_latex_sections,
     sections_from_pdf,
 )
-from pipeline.types import ExtractionResult, PaperMetadata, Claim
+from analysis.types import ExtractionResult, PaperMetadata, Claim
 
 
 def _mean_score(claims: List[Claim], key: str) -> float | None:

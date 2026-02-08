@@ -11,8 +11,8 @@ from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field
 import httpx
 
-from pipeline.extract import run_pipeline
-from pipeline.leaderboard import (
+from analysis.extract import run_pipeline
+from analysis.leaderboard import (
     CitationCounts,
     InfluenceEdge,
     LeaderboardPaper,

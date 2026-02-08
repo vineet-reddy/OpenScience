@@ -9,7 +9,7 @@ calcium imaging, and behavioral data in NWB format.
 - **Auth**: None required for reading public data
 - **Format**: JSON metadata via REST API, NWB data files via S3
 - **Size**: Metadata queries are KB-scale. Individual NWB files range 50KB-50MB.
-- **Python module**: `pipeline/datasets/dandi.py`
+- **Python module**: `analysis/datasets/dandi.py`
 - **Swagger UI**: https://api.dandiarchive.org/swagger/
 
 ## When to Use
@@ -22,7 +22,7 @@ calcium imaging, and behavioral data in NWB format.
 ## Quick Start (Python)
 
 ```python
-from pipeline.datasets.dandi import list_dandisets, search_dandisets, get_summary, list_assets
+from analysis.datasets.dandi import list_dandisets, search_dandisets, get_summary, list_assets
 
 # List recent dandisets
 recent = list_dandisets(page_size=5)
@@ -84,7 +84,7 @@ These are small enough for quick iteration during a hackathon:
 
 Access the recommendations programmatically:
 ```python
-from pipeline.datasets.dandi import RECOMMENDED_DANDISETS
+from analysis.datasets.dandi import RECOMMENDED_DANDISETS
 print(RECOMMENDED_DANDISETS)
 ```
 
@@ -105,7 +105,7 @@ print(RECOMMENDED_DANDISETS)
 ## Example: Research Iteration
 
 ```python
-from pipeline.datasets.dandi import search_dandisets, get_summary, list_assets
+from analysis.datasets.dandi import search_dandisets, get_summary, list_assets
 
 # Exploring fear conditioning data
 results = search_dandisets("fear conditioning")

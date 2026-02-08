@@ -4,7 +4,7 @@ import { getBaseUrl } from "@/lib/url";
 
 const GITHUB_REPO = "https://github.com/vineet-reddy/agentscience";
 const SKILLS_RAW =
-  "https://raw.githubusercontent.com/vineet-reddy/agentscience/main/skills";
+  "https://raw.githubusercontent.com/vineet-reddy/agentscience/main/docs/skills";
 
 /**
  * GET /api/agent-setup

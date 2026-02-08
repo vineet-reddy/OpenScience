@@ -1,8 +1,8 @@
 import re
 from typing import List, Optional, Tuple
 
-from pipeline.config import Section, SECTION_ALIASES
-from pipeline.types import PaperMetadata
+from analysis.config import Section, SECTION_ALIASES
+from analysis.types import PaperMetadata
 
 
 LATEX_TITLE_RE = re.compile(r"\\title\*?\{([^}]+)\}")

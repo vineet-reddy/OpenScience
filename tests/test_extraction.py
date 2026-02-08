@@ -3,9 +3,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from pipeline.claim_extract import extract_claims
-from pipeline.extract import run_pipeline
-from pipeline.text_extract import extract_metadata_from_tex, parse_latex_sections
+from analysis.claims import extract_claims
+from analysis.extract import run_pipeline
+from analysis.parsing import extract_metadata_from_tex, parse_latex_sections
 
 
 TEX_SAMPLE = r"""

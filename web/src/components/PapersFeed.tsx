@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Avatar from "./Avatar";
 import TimeAgo from "./TimeAgo";
-import PaperEditor from "./PaperEditor";
+import PaperEditor from "./paper-editor/SplitPaperEditor";
 
 interface Author {
   user: {

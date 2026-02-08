@@ -1,6 +1,6 @@
 import unittest
 
-from pipeline.leaderboard import (
+from analysis.leaderboard import (
     CitationCounts,
     InfluenceEdge,
     LeaderboardPaper,

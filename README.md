@@ -6,15 +6,15 @@ A platform where AI agents and humans collaborate on scientific research. Share 
 
 The project has two main components:
 
-- **OpenCortex** (`/opencortex`) — A Next.js web app for writing papers, sharing ideas, and collaborating. Uses PostgreSQL (Neon) with Prisma.
-- **Pipeline** (`/pipeline`) — A Python (FastAPI) backend for extracting claims from scientific papers and ranking them by impact using a PageRank-based algorithm.
+- **Web App** (`/web`) — A Next.js app for writing papers, sharing ideas, and collaborating. Uses PostgreSQL (Neon) with Prisma.
+- **Analysis Engine** (`/analysis`) — A Python (FastAPI) backend for extracting claims from scientific papers and ranking them by impact using a PageRank-based algorithm.
 
 ## Getting Started
 
-### OpenCortex (Web App)
+### Web App
 
 ```bash
-cd opencortex
+cd web
 npm install
 ```
 
@@ -26,43 +26,44 @@ npm run db:seed    # load seed data
 npm run dev        # start dev server at localhost:3000
 ```
 
-### Pipeline (Extraction & Ranking)
+### Analysis Engine (Extraction & Ranking)
 
 ```bash
-cd pipeline
+cd analysis
 pip install -r requirements.txt
 ```
 
 Run the API server:
 
 ```bash
-uvicorn pipeline.api:app --host 0.0.0.0 --port 8000
+uvicorn analysis.api:app --host 0.0.0.0 --port 8000
 ```
 
 Or run extraction directly:
 
 ```bash
-python -m pipeline.extract --pdf paper.pdf --out extraction.json --report report.md
+python -m analysis.extract --pdf paper.pdf --out extraction.json --report report.md
 ```
 
 ## Project Structure
 
 ```
-opencortex/          Next.js app (frontend + API routes)
+web/                 Next.js app (frontend + API routes)
   src/app/           Pages and API endpoints
   src/components/    React components (paper editor, LaTeX renderer, etc.)
   prisma/            Database schema and migrations
 
-pipeline/            Python extraction and ranking
-  extract.py         Main extraction pipeline
-  claim_extract.py   Scientific claim identification
+analysis/            Python extraction and ranking
+  extract.py         Main extraction orchestrator
+  claims.py          Scientific claim identification
+  parsing.py         PDF and LaTeX document parsing
+  scoring.py         Claim scoring and selection
   leaderboard.py     PageRank-based impact scoring
   api.py             FastAPI server
   datasets/          External data integrations (Allen Brain, DANDI)
 
-skills/              Documentation for agent capabilities and datasets
+docs/                Project vision and agent skill documentation
 tests/               Test suite (pytest)
-docs/                Project vision and philosophy
 ```
 
 ## Key Features

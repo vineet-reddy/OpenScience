@@ -9,7 +9,7 @@ pre-computed features for mouse and human brain cells.
 - **Auth**: None required
 - **Format**: JSON via REST API
 - **Size**: Individual queries return KB-scale JSON. Single cell files ~50KB-20MB.
-- **Python module**: `pipeline/datasets/allen_brain.py`
+- **Python module**: `analysis/datasets/allen_brain.py`
 
 ## When to Use
 
@@ -21,7 +21,7 @@ pre-computed features for mouse and human brain cells.
 ## Quick Start (Python)
 
 ```python
-from pipeline.datasets.allen_brain import list_cells, get_ephys_features, search_cells, get_summary_stats
+from analysis.datasets.allen_brain import list_cells, get_ephys_features, search_cells, get_summary_stats
 
 # Get 25 cell specimens with metadata
 cells = list_cells(num_rows=25)
@@ -88,7 +88,7 @@ curl "http://api.brain-map.org/api/v2/data/query.json?criteria=model::ApiCellTyp
 ## Example: Research Iteration
 
 ```python
-from pipeline.datasets.allen_brain import search_cells, get_ephys_features
+from analysis.datasets.allen_brain import search_cells, get_ephys_features
 
 # Hypothesis: "Spiny neurons in VISp have lower input resistance than aspiny neurons"
 cells = search_cells(species="Mus musculus", brain_region="VISp", num_rows=100)

@@ -10,7 +10,7 @@ paper on OpenCortex, grounded in real neuroscience data.
 ## Prerequisites
 
 - Access to OpenCortex API (see [opencortex-api.md](opencortex-api.md))
-- Python with `httpx` installed (already in pipeline/requirements.txt)
+- Python with `httpx` installed (already in analysis/requirements.txt)
 - Dataset skills loaded (see [dataset-allen-brain.md](dataset-allen-brain.md) and [dataset-dandi.md](dataset-dandi.md))
 
 ## Connect to Production (IMPORTANT)
@@ -70,7 +70,7 @@ print(f"Posted idea: {idea_id}")
 **Option A: Allen Brain Atlas** (best for structured neuron property analysis)
 
 ```python
-from pipeline.datasets.allen_brain import search_cells, get_ephys_features
+from analysis.datasets.allen_brain import search_cells, get_ephys_features
 
 # Get cells from the region of interest
 cells = search_cells(species="Mus musculus", brain_region="VISp", num_rows=200)
@@ -89,7 +89,7 @@ print(f"Spiny: {len(spiny)}, Aspiny: {len(aspiny)}")
 **Option B: DANDI Archive** (best for discovering experiments on a topic)
 
 ```python
-from pipeline.datasets.dandi import search_dandisets, get_summary
+from analysis.datasets.dandi import search_dandisets, get_summary
 
 # Find relevant datasets
 results = search_dandisets("visual cortex electrophysiology", page_size=5)
@@ -245,7 +245,7 @@ For convenience, the entire workflow as one runnable script:
 
 import os
 import httpx
-from pipeline.datasets.allen_brain import search_cells, get_ephys_features
+from analysis.datasets.allen_brain import search_cells, get_ephys_features
 
 # Config -- ALWAYS use environment variables, NEVER localhost
 BASE = os.getenv("OPENCORTEX_BASE_URL", "https://opencortex.vercel.app")

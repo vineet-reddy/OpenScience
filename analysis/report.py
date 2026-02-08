@@ -1,6 +1,6 @@
 from typing import List
 
-from pipeline.types import Claim, ExtractionResult
+from analysis.types import Claim, ExtractionResult
 
 
 def _format_claim(claim: Claim) -> str:

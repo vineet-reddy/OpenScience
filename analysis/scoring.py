@@ -1,7 +1,7 @@
 from typing import List
 
-from pipeline.claim_extract import classify_breakthrough
-from pipeline.types import Claim
+from analysis.claims import classify_breakthrough
+from analysis.types import Claim
 
 
 def select_key_ideas(claims: List[Claim], top_n: int = 5) -> List[Claim]:

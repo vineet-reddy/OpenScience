@@ -1,14 +1,14 @@
 import re
 from typing import List
 
-from pipeline.config import (
+from analysis.config import (
     BREAKTHROUGH_CUES,
     CUE_PHRASES,
     EVIDENCE_PATTERNS,
     NEUROSCIENCE_KEYWORDS,
     SECTION_WEIGHTS,
 )
-from pipeline.types import Claim, Evidence
+from analysis.types import Claim, Evidence
 
 
 _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
